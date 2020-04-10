@@ -8,12 +8,16 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { MacOsComponent } from './mac-os/mac-os.component';
+import { HomeComponent } from './home/home.component';
+import { WinOsComponent } from './win-os/win-os.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlertDialogComponent,
-    MacOsComponent
+    MacOsComponent,
+    HomeComponent,
+    WinOsComponent
   ],
   imports: [
     BrowserModule,
