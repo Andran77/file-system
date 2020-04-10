@@ -6,17 +6,20 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from "@angular/material/icon";
+import { MatListModule } from '@angular/material/list';
+import { HomeComponent } from './home/home.component';
 import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { MacOsComponent } from './mac-os/mac-os.component';
-import { HomeComponent } from './home/home.component';
 import { WinOsComponent } from './win-os/win-os.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     AlertDialogComponent,
     MacOsComponent,
-    HomeComponent,
     WinOsComponent
   ],
   imports: [
@@ -24,7 +27,10 @@ import { WinOsComponent } from './win-os/win-os.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

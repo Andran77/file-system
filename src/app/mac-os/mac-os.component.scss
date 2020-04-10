@@ -1,5 +1,79 @@
-div {
+.toolbar {
+    background-image: linear-gradient(#e5e5e5, #c9c9c9);
+    height: 10%;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #bebebe;
+    .tool-table {
+        width: 100%;
+        height: 100%;
+        border-top: 1px solid #ededed;
+        border-left: 1px solid #ededed;
+        border-right: 1px solid #ededed;
+        border-radius: 5px 5px 0 0;
+        .tr-one {
+            .th-one {
+                width: 35%;
+            }
+            .th-two {
+                float: right;
+                .folder {
+                    background-image: url('../../assets/img/icon/mac/folder.png');
+                    height: 120px;
+                    width: 120px;
+                    zoom: 0.2;
+                }
+            }
+            .th-tree {
+                font-size: 0.7rem;
+                color: #706f70;
+                width: 50%;
+                float: right;
+                .folder {
+                    float: left;
+                    background-image: url('../../assets/img/icon/mac/folder.png');
+                    height: 92px;
+                    width: 120px;
+                    zoom: 0.2;
+                }
+                .text {
+                    float: left;
+                }
+            }
+        }
+    }
+}
+
+.content {
     background-color: #ffffff;
-    width: 100%;
-    height: 100%;
+    height: 88%;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid #bebebe;
+    .left {
+        float: left;
+        width: 35%;
+        height: 100%;
+        background: #e0e5e8;
+        border-left: 1px solid #ededed;
+        border-right: 1px solid #bebebe;
+        border-radius: 0 0 0 5px;
+        .list {
+            padding: 5% 0 0 5%;
+            contain: content;
+            height: 95%;
+            overflow: scroll;
+            p {
+                margin: 0;
+            }
+            .mat-list {
+                padding: 0;
+                .mat-list-item {
+                    height: 35px;
+                }
+                
+            }
+        }
+    }
+    .right {
+        float: left;
+    }
 }

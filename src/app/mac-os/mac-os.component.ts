@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   selector: 'app-mac-os',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MacOsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private matIconRegistry: MatIconRegistry){
+    this.matIconRegistry.addSvgIcon(
+      `folder`,
+      `../../assets/img/icon/mac/folder.png`
+    );
+  }
 
   ngOnInit(): void {
   }
