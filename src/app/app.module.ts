@@ -13,6 +13,9 @@ import { HomeComponent } from './home/home.component';
 import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { MacOsComponent } from './mac-os/mac-os.component';
 import { WinOsComponent } from './win-os/win-os.component';
+import { MacFilesComponent } from './mac-os/mac-files/mac-files.component';
+import { MyDatePipe } from './my-date.pipe';
+import { PathPipePipe } from './path-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { WinOsComponent } from './win-os/win-os.component';
     HomeComponent,
     AlertDialogComponent,
     MacOsComponent,
-    WinOsComponent
+    WinOsComponent,
+    MacFilesComponent,
+    MyDatePipe,
+    PathPipePipe
   ],
   imports: [
     BrowserModule,

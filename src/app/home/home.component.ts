@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
   }
 
   openDialog() {
-    console.log('aksdhakjdh')
     const dialogRef = this.dialog.open(AlertDialogComponent, {
       data: {
         width: '250px',
@@ -39,5 +38,4 @@ export class HomeComponent implements OnInit {
       }
     });
   }
-
 }

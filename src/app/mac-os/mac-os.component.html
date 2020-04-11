@@ -1,68 +1,67 @@
 <div class="toolbar">
-   <table class="tool-table">
-      <tr class="tr-one">
-         <th class="th-one">test1</th>
-         <th class="th-tree">
-            <mat-icon class="folder"></mat-icon><p class="text">univercity</p>
-         </th>
-      </tr>
-      <tr>
-         <th>test2</th>
-         <th>test2 test2</th>
-         <th>test2 test2</th>
-      </tr>
-   </table>
+   <div class="pd-l5 header-content">
+      <mat-icon class="tool-ic tool-re"></mat-icon>
+      <mat-icon class="tool-ic tool-ye" (click)="goBack()"></mat-icon>
+      <mat-icon class="tool-ic tool-gr"></mat-icon>
+   </div>
+   <div class="tool-content">
+      <mat-icon class="folder"></mat-icon><p class="pd-l5 text">univercity</p>
+   </div>
 </div>
 <div class="content">
    <div class="left">
       <div class="list">
-         <p>Favorites</p>
-         <mat-list role="list">
-            <mat-list-item role="listitem">Mr.John Smith</mat-list-item>
-            <mat-list-item role="listitem">AirDrop</mat-list-item>
-            <mat-list-item role="listitem">Projects</mat-list-item>
-            <mat-list-item role="listitem">Recents</mat-list-item>
-            <mat-list-item role="listitem">Aplications</mat-list-item>
-            <mat-list-item role="listitem">Desctop</mat-list-item>
-            <mat-list-item role="listitem">Documents</mat-list-item>
-            <mat-list-item role="listitem">Downloads</mat-list-item>
-            <mat-list-item role="listitem">Creative Cloud Files</mat-list-item>
+         <div class="fav-content">
+            <p>
+               <span class="float-left">Favorites</span>
+               <span *ngIf="showFav" class="float-right pd-r10 hide" (click)="showFav=!showFav">Hide</span>
+               <span *ngIf="!showFav" class="float-right pd-r10 hide" (click)="showFav=!showFav">Show</span>
+            </p>
+            <br>
+         </div>
+         <mat-list role="list" [class.display-none]="!showFav">
+            <mat-list-item role="listitem"><mat-icon class="listicon listicon-1"></mat-icon>Mr.John Smith</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="listicon listicon-2"></mat-icon>AirDrop</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="listicon listicon-3"></mat-icon>Projects</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="listicon listicon-4"></mat-icon>Recents</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="listicon listicon-5"></mat-icon>Aplications</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="listicon listicon-6"></mat-icon>Desctop</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="listicon listicon-7"></mat-icon>Documents</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="listicon listicon-8"></mat-icon>Downloads</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="listicon listicon-9"></mat-icon>Creative Cloud Files</mat-list-item>
          </mat-list>
-         <p>iCloud</p>
-         <mat-list role="list">
-            <mat-list-item role="listitem">iCloud Drive</mat-list-item>
+         <div class="cloud-content">
+            <p class="pd-t10">
+               <span class="float-left">iCloud</span>
+               <span *ngIf="showCloud" class="float-right pd-r10 hide" (click)="showCloud=!showCloud">Hide</span>
+               <span *ngIf="!showCloud" class="float-right pd-r10 hide" (click)="showCloud=!showCloud">Show</span>
+            </p>
+            <br>
+         </div>
+         <mat-list role="list" [class.display-none]="!showCloud">
+            <mat-list-item role="listitem"><mat-icon class="icloudicon listicon-10"></mat-icon>iCloud Drive</mat-list-item>
          </mat-list>
-         <p>Tags</p>
-         <mat-list role="list">
-            <mat-list-item role="listitem">Red</mat-list-item>
-            <mat-list-item role="listitem">Orange</mat-list-item>
-            <mat-list-item role="listitem">Yellow</mat-list-item>
-            <mat-list-item role="listitem">Green</mat-list-item>
-            <mat-list-item role="listitem">Blue</mat-list-item>
-            <mat-list-item role="listitem">Purple</mat-list-item>
-            <mat-list-item role="listitem">Gray</mat-list-item>
-            <mat-list-item role="listitem">All tags...</mat-list-item>
+         <div class="tag-content">
+            <p class="pd-t10">
+               <span class="float-left">Tags</span>
+               <span *ngIf="showTags" class="float-right pd-r10 hide" (click)="showTags=!showTags">Hide</span>
+               <span *ngIf="!showTags" class="float-right pd-r10 hide" (click)="showTags=!showTags">Show</span>
+            </p>
+            <br>
+         </div>
+         <mat-list role="list" [class.display-none]="!showTags">
+            <mat-list-item role="listitem"><mat-icon class="tags tags-re"></mat-icon>Red</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="tags tags-or"></mat-icon>Orange</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="tags tags-ye"></mat-icon>Yellow</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="tags tags-gn"></mat-icon>Green</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="tags tags-bl"></mat-icon>Blue</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="tags tags-pu"></mat-icon>Purple</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="tags tags-gy"></mat-icon>Gray</mat-list-item>
+            <mat-list-item role="listitem"><mat-icon class="tags tags-all"></mat-icon>All tags...</mat-list-item>
          </mat-list>
       </div>
    </div>
    <div class="right">
-      <div class="list">
-         <p>Favorites</p>
-         <mat-list role="list">
-            <mat-list-item role="listitem">Mr.John Smith</mat-list-item>
-            <mat-list-item role="listitem">AirDrop</mat-list-item>
-            <mat-list-item role="listitem">Projects</mat-list-item>
-            <mat-list-item role="listitem">Recents</mat-list-item>
-            <mat-list-item role="listitem">Aplications</mat-list-item>
-            <mat-list-item role="listitem">Desctop</mat-list-item>
-            <mat-list-item role="listitem">Documents</mat-list-item>
-            <mat-list-item role="listitem">Downloads</mat-list-item>
-            <mat-list-item role="listitem">Creative Cloud Files</mat-list-item>
-         </mat-list>
-         <p>iCloud</p>
-         <mat-list role="list">
-            <mat-list-item role="listitem">iCloud Drive</mat-list-item>
-         </mat-list>
-      </div>
+      <app-mac-files [path]="currentPath" [files]="files" (selectedFolder)="selectedFolder($event)"></app-mac-files>
    </div>
 </div>

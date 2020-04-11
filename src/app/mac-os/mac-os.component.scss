@@ -3,46 +3,34 @@
     height: 10%;
     border-radius: 5px 5px 0 0;
     border: 1px solid #bebebe;
-    .tool-table {
+    .header-content {
+        position: absolute;
+        padding-left: 5px;
+        .tool-ic {
+            width: 72px;
+            height: 72px;
+            zoom: 0.3;
+        }
+    }
+    .tool-content {
+        display: flex;
+        justify-content: center;
         width: 100%;
-        height: 100%;
-        border-top: 1px solid #ededed;
-        border-left: 1px solid #ededed;
-        border-right: 1px solid #ededed;
-        border-radius: 5px 5px 0 0;
-        .tr-one {
-            .th-one {
-                width: 35%;
-            }
-            .th-two {
-                float: right;
-                .folder {
-                    background-image: url('../../assets/img/icon/mac/folder.png');
-                    height: 120px;
-                    width: 120px;
-                    zoom: 0.2;
-                }
-            }
-            .th-tree {
-                font-size: 0.7rem;
-                color: #706f70;
-                width: 50%;
-                float: right;
-                .folder {
-                    float: left;
-                    background-image: url('../../assets/img/icon/mac/folder.png');
-                    height: 92px;
-                    width: 120px;
-                    zoom: 0.2;
-                }
-                .text {
-                    float: left;
-                }
-            }
+        padding-top: 5px;
+        height: 20px;
+        .folder {
+            height: 92px;
+            width: 120px;
+            zoom: 0.2;
+        }
+        .text {
+            float: right;
+            font-size: 0.8rem;
+            color: #706f70;
+            margin: 0;
         }
     }
 }
-
 .content {
     background-color: #ffffff;
     height: 88%;
@@ -64,16 +52,79 @@
             p {
                 margin: 0;
             }
+            ul {
+                list-style-type: none;
+                li {
+                    float: left;
+                }
+            }
             .mat-list {
                 padding: 0;
                 .mat-list-item {
                     height: 35px;
+                }  
+            }
+            .listicon {
+                height: 87px;
+                width: 96px;
+                zoom: 0.25;
+                padding-bottom: 20px;
+                padding-right: 20px;
+            }
+            .icloudicon {
+                height: 40px;
+                width: 40px;
+                zoom: 0.6;
+                padding-bottom: 5px;
+                padding-right: 10px;
+            }
+            .tags {
+                zoom: 0.67;
+                width: 36px;
+                height: 36px;
+                padding-right: 5px;
+            }
+            .tag-content {
+                .hide {
+                    display: none;
                 }
-                
+            }
+            .tag-content:hover {
+                .hide {
+                    display: initial;
+                }
+            }
+            .cloud-content {
+                .hide {
+                    display: none;
+                }
+            }
+            .cloud-content:hover {
+                .hide {
+                    display: initial;
+                }
+            }
+            .fav-content {
+                .hide {
+                    display: none;
+                }
+            }
+            .fav-content:hover {
+                .hide {
+                    display: initial;
+                }
+            }
+            .display-none {
+                display: none;
             }
         }
     }
     .right {
+        background-color: #f5f5f5;
+        contain: content;
+        overflow: scroll;
+        width: 64%;
+        height: 100%;
         float: left;
     }
 }
