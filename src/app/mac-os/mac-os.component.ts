@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FileService, File } from '../file.service';
 
 @Component({
@@ -11,34 +12,32 @@ export class MacOsComponent implements OnInit {
   showTags:Boolean = true;
   showCloud:Boolean = true;
   showFav:Boolean = true;
+  fullPath: string = '';
+  currentPath: string = '';
 
-  filePath: Array<String> = [];
-  files: Array<File> = [];
-  currentPath: String = '';
-
-  constructor(public fileService: FileService){
+  constructor(public fileService: FileService, private router: Router ){
   }
 
   ngOnInit(): void {
-    this.files = this.getCurrentFiles();
   }
 
   selectedFolder(event) {
-    this.currentPath = event + '/';
-    this.files = this.getCurrentFiles();
-  }
-
-  getCurrentFiles() {
-    const regPath = this.currentPath ? this.currentPath.replace(/\//g, '\\/') : '';
-    return this.fileService.getFiles().filter(file => {
-      const regex = new RegExp('^(' + regPath + ').*$')
-      return regex.test(file.path);
-    })
+    this.currentPath = this.getCurrentPath(event);
+    this.fullPath = event + '/';
   }
 
   goBack() {
-    this.currentPath = this.currentPath.replace(/([a-z]*\/)*([a-z]*\/)/, (fullValue, firstPart, secondPart) => {
-      return fullValue; // firstPart ? firstPart : '';
+    this.fullPath = this.fullPath.replace(/([a-z]*\/)$/, '');
+    this.currentPath = this.getCurrentPath(this.fullPath.replace(/\/$/, ''));
+  }
+
+  getCurrentPath(path) {
+    return path.replace(/^([a-z]*[\/])*([a-z]*)$/, (full, parent, current) => {
+      return current;
     })
+  }
+
+  goHome() {
+    this.router.navigate(['home']);
   }
 }

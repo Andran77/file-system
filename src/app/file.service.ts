@@ -23,6 +23,16 @@ export class FileService {
       type: 'folder'
     },
     {
+      path: 'university/faculties/mathematics',
+      modificationDate: '2018-10-10',
+      type: 'folder'
+    },
+    {
+      path: 'university/faculties/phisics',
+      modificationDate: '2018-10-10',
+      type: 'folder'
+    },
+    {
       path: 'university/faculties/mathematics/subjects.txt',
       modificationDate: '2018-08-08',
       type: 'file',

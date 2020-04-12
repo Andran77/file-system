@@ -1,11 +1,14 @@
 <div class="toolbar">
    <div class="pd-l5 header-content">
-      <mat-icon class="tool-ic tool-re"></mat-icon>
+      <mat-icon class="tool-ic tool-re" (click)="goHome()"></mat-icon>
       <mat-icon class="tool-ic tool-ye" (click)="goBack()"></mat-icon>
       <mat-icon class="tool-ic tool-gr"></mat-icon>
    </div>
-   <div class="tool-content">
-      <mat-icon class="folder"></mat-icon><p class="pd-l5 text">univercity</p>
+   <div *ngIf="currentPath" class="tool-content">
+      <mat-icon class="folder"></mat-icon><p class="pd-l5 text">{{currentPath}}</p>
+   </div>
+   <div *ngIf="!currentPath" class="tool-content">
+      <mat-icon class="finder"></mat-icon><p class="pd-l5 text">Finder</p>
    </div>
 </div>
 <div class="content">
@@ -62,6 +65,6 @@
       </div>
    </div>
    <div class="right">
-      <app-mac-files [path]="currentPath" [files]="files" (selectedFolder)="selectedFolder($event)"></app-mac-files>
+      <app-mac-files [path]="fullPath" (selectedFolder)="selectedFolder($event)"></app-mac-files>
    </div>
 </div>

@@ -12,6 +12,20 @@ table {
         padding-left: 5px;
         border-right: 1px solid #dfdfdf;
       }
+      .inner-name {
+        float: right;
+        padding-right: 10px;
+        .arrow-down {
+          width: 36px;
+          height: 36px;
+          zoom: 0.3;
+        }
+        .arrow-up {
+          width: 36px;
+          height: 36px;
+          zoom: 0.3;
+        }
+      }
       .date {
         border-right: 1px solid #dfdfdf;
       }
@@ -57,6 +71,12 @@ table {
             background-image: url('../../../assets/img/mac/icon/icon-csv.png');
             height: 98px;
             width: 95px;
+            zoom: 0.2;
+          }
+          &-doc {
+            background-image: url('../../../assets/img/mac/icon/icon-doc.png');
+            height: 120px;
+            width: 96px;
             zoom: 0.2;
           }
         }
