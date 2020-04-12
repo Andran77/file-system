@@ -10,10 +10,12 @@ export class SortingService {
 
   sortFileByName(files, k) {
     return files.sort(function (a, b) {
-      if (a.path > b.path) {
+      const aName = a.path.match(/[a-z\.]*$/)[0];
+      const bName = b.path.match(/[a-z\.]*$/)[0];
+      if (aName > bName) {
         return 1*k;
       }
-      if (a.path < b.path) {
+      if (aName < bName) {
         return -1*k;
       }
       return 0;

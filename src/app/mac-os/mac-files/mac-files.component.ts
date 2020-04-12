@@ -10,6 +10,7 @@ import { SortingService } from 'src/app/sorting.service';
 export class MacFilesComponent {
 
   @Input() path: string;
+  @Input() searchText: string;
   @Output() selectedFolder = new EventEmitter<string>();
 
   fileItems: Array<File> = [];
@@ -26,8 +27,17 @@ export class MacFilesComponent {
   ) { }
 
   ngOnChanges(changes: SimpleChange) {
-    this.path = changes['path'].currentValue;
-    this.fileItems = this.getFiles();
+    if (changes.hasOwnProperty('searchText')) {
+      if (changes['searchText'].currentValue) {
+        this.fileItems = this.getSearchFiles();
+      }
+      if (!changes['searchText'].currentValue) {
+        this.fileItems = this.getFiles();
+      }
+    } else if (changes.hasOwnProperty('path')) {
+      this.path = changes['path'].currentValue;
+      this.fileItems = this.getFiles();
+    }
   }
 
   getFiles() {
@@ -35,6 +45,25 @@ export class MacFilesComponent {
     const files = this.fileService.getFiles().filter(file => {
       const regex = new RegExp('^' + regPath + '[a-z\.]*$');
       return regex.test(file.path) && file.path.startsWith(this.path);
+    })
+    if (this.sortByName) {
+      let kaf = this.sortByNameK ? 1 : -1;
+      return this.sortService.sortFileByName(files, kaf);
+    }
+    if (this.sortByDate) {
+      let kaf = this.sortByDateK ? 1 : -1;
+      return this.sortService.sortFileByDate(files, kaf);
+    }
+    if (this.sortBySize) {
+      let kaf = this.sortBySizeK ? 1 : -1;
+      return this.sortService.sortFileBySize(files, kaf);
+    }
+  }
+
+  getSearchFiles() {
+    const files = this.fileService.getFiles().filter(file => {
+      const fileName = file.path.match(/[a-z\.]*$/)[0];
+      return fileName.includes(this.searchText);
     })
     if (this.sortByName) {
       let kaf = this.sortByNameK ? 1 : -1;

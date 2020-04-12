@@ -1,6 +1,6 @@
 .toolbar {
     background-image: linear-gradient(#e5e5e5, #c9c9c9);
-    height: 10%;
+    height: 72px;
     border-radius: 5px 5px 0 0;
     border: 1px solid #bebebe;
     .header-content {
@@ -33,6 +33,59 @@
             font-size: 0.8rem;
             color: #706f70;
             margin: 0;
+        }
+    }
+    .arrows {
+        .arrow {
+            width: 15%;
+            &-left, &-right {
+                width: 120px;
+                height: 120px;
+                zoom: 0.25;
+            }
+        }
+        .tool {
+            width: 65%;
+            display: flex;
+            justify-content: center;
+            &-btn {
+                width: 1400px;
+                height: 120px;
+                zoom: 0.25;
+            }
+        }
+        .search {
+            width: 18%;
+            height: 26px;
+            background: #f6f6f6;
+            border-radius: 5px;
+            border-top: 1px solid #c7c7c7;
+            border-left: 1px solid #c7c7c7;
+            border-right: 1px solid #c7c7c7;
+            border-bottom: 1px solid #b5b5b5;
+            .input {
+                display: flex;
+                height: 26px;
+                &-field {
+
+                    border: none;
+                    width: 100%;
+                    background: transparent;
+                }
+                .search-loop {
+                    position: absolute;
+                    width: 48px;
+                    height: 48px;
+                    zoom: 0.55;
+                }
+                .cancel {
+                    width: 72px;
+                    height: 72px;
+                    zoom: 0.36;
+                    float: right;
+                    padding-right: 10px;
+                }
+            }
         }
     }
 }
