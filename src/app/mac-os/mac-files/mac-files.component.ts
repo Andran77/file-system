@@ -1,6 +1,5 @@
 import { Component, Input, SimpleChange, Output, EventEmitter } from '@angular/core';
 import { FileService, File } from '../../file.service'
-import { summaryForJitFileName } from '@angular/compiler/src/aot/util';
 
 @Component({
   selector: 'app-mac-files',
@@ -38,8 +37,6 @@ export class MacFilesComponent {
 
   sortFileByName(files, k) {
     return files.sort(function (a, b) {
-      console.log(a.path, 'aaa');
-      console.log(b.path, 'bbb')
       if (a.path > b.path) {
         return 1*k;
       }
@@ -52,8 +49,6 @@ export class MacFilesComponent {
 
   sortFileByDate(files, k) {
     return files.sort(function (a, b) {
-      console.log(a.path, 'aaa');
-      console.log(b.path, 'bbb')
       if (a.path > b.path) {
         return 1*k;
       }
@@ -66,8 +61,6 @@ export class MacFilesComponent {
 
   sortFileBySize(files, k) {
     return files.sort(function (a, b) {
-      console.log(a.path, 'aaa');
-      console.log(b.path, 'bbb')
       if (a.path > b.path) {
         return 1*k;
       }
@@ -79,7 +72,6 @@ export class MacFilesComponent {
   }
 
   sortBy(field) {
-    console.log(field, 'field')
     switch(field) {
       case 'name':
         this.sortByDate = false;
