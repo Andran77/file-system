@@ -9,6 +9,7 @@ const appRoutes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'mac', component: MacOsComponent },
+  { path: 'mac/:id', component: MacOsComponent },
   { path: 'win', component: WinOsComponent }
 ];
 

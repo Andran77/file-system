@@ -4,11 +4,33 @@
       <mat-icon class="tool-ic tool-ye" (click)="goBack()"></mat-icon>
       <mat-icon class="tool-ic tool-gr"></mat-icon>
    </div>
-   <div *ngIf="currentPath" class="tool-content">
+   <div *ngIf="currentPath && !searchText" class="tool-content">
       <mat-icon class="folder"></mat-icon><p class="pd-l5 text">{{currentPath}}</p>
    </div>
-   <div *ngIf="!currentPath" class="tool-content">
+   <div *ngIf="!currentPath || searchText" class="tool-content">
       <mat-icon class="finder"></mat-icon><p class="pd-l5 text">Finder</p>
+   </div>
+   <div>
+      <div class="arrows pd-l5 pd-t5">
+         <div class="arrow float-left">
+            <mat-icon class="arrow-left" [ngClass]="currentPath ? 'arrow-left-active' : 'arrow-left-off'" (click)="goBack()"></mat-icon>
+            <mat-icon class="arrow-right" [ngClass]="historyPath.length ? 'arrow-right-active' : 'arrow-right-off'" (click)="goPrew()"></mat-icon>
+         </div>
+         <div class="tool float-left">
+            <mat-icon class="tool-btn"></mat-icon>
+         </div>
+         <div class="search float-left">
+            <div class="input">
+               <mat-icon class="search-loop" matSufux></mat-icon>
+               <input
+                  type="text"
+                  class="input-field pd-l25"
+                  placeholder="Search"
+                  [(ngModel)]="searchText">
+               <mat-icon class="cancel" (click)="clearSearch()"></mat-icon>
+            </div>
+         </div>
+      </div>
    </div>
 </div>
 <div class="content">
@@ -65,6 +87,6 @@
       </div>
    </div>
    <div class="right">
-      <app-mac-files [path]="fullPath" (selectedFolder)="selectedFolder($event)"></app-mac-files>
+      <app-mac-files [path]="fullPath" [searchText]="searchText" (selectedFolder)="selectedFolder($event)"></app-mac-files>
    </div>
 </div>

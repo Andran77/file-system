@@ -80,9 +80,22 @@ export class FileService {
       size: 0.02
     }
   ]
-  constructor() { }
 
   getFiles() {
     return [ ...this.files ];
+  }
+
+  getFilesStartsWith(path) {
+    return this.files.find(file => file.path === path)
+  }
+
+  getFolderSize(path) {
+    let folderSize = 0;
+    this.files.forEach(file => {
+      if (file.type === 'file' && file.path.startsWith(path)) {
+        folderSize += file.size;
+      }
+    })
+    return folderSize;
   }
 }
