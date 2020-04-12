@@ -1,7 +1,128 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; user-select: none;}
 .mat-typography {
-    background-color: grey;
+    background-color: #f3f3f3;
+    padding: 0.5%;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.pd-t10 {
+    padding-top: 10px;
+}
+.pd-l10 {
+    padding-left: 10px;
+}
+.pd-r10 {
+    padding-right: 10px;
+}
+.pd-l5 {
+    padding-left: 5px;
+}
+.text-left {
+    text-align: left;
+}
+.text-rigth {
+    text-align: right;
+}
+.listicon {
+    &-1 {
+        background-image: url('./assets/img/mac/icon/icon-1.png');
+    }
+    &-2 {
+        background-image: url('./assets/img/mac/icon/icon-2.png');
+    }
+    &-3 {
+        background-image: url('./assets/img/mac/icon/icon-3.png');
+    }
+    &-4 {
+        background-image: url('./assets/img/mac/icon/icon-4.png');
+    }
+    &-5 {
+        background-image: url('./assets/img/mac/icon/icon-5.png');
+    }
+    &-6 {
+        background-image: url('./assets/img/mac/icon/icon-6.png');
+    }
+    &-7 {
+        background-image: url('./assets/img/mac/icon/icon-7.png');
+    }
+    &-8 {
+        background-image: url('./assets/img/mac/icon/icon-8.png');
+    }
+    &-9 {
+        background-image: url('./assets/img/mac/icon/icon-9.png');
+    }
+    &-10 {
+        background-image: url('./assets/img/mac/icon/icon-10.png');
+    }
+}
+.tags {
+    &-re {
+        background-image: url('./assets/img/mac/icon/icon-re.png');
+    }
+    &-or {
+        background-image: url('./assets/img/mac/icon/icon-or.png');
+    }
+    &-ye {
+        background-image: url('./assets/img/mac/icon/icon-ye.png');
+    }
+    &-gn {
+        background-image: url('./assets/img/mac/icon/icon-gn.png');
+    }
+    &-bl {
+        background-image: url('./assets/img/mac/icon/icon-bl.png');
+    }
+    &-pu {
+        background-image: url('./assets/img/mac/icon/icon-pu.png');
+    }
+    &-gy {
+        background-image: url('./assets/img/mac/icon/icon-gy.png');
+    }
+    &-all {
+        background-image: url('./assets/img/mac/icon/icon-tags.png');
+    }
+}
+.header-content {
+    .tool {
+        &-re {
+            background-image: url('./assets/img/mac/icon/tool-re.png');
+        }
+        &-ye {
+            background-image: url('./assets/img/mac/icon/tool-ye.png');
+        }
+        &-gr {
+            background-image: url('./assets/img/mac/icon/tool-gr.png');
+        }
+    }
+}
+.header-content:hover {
+    .tool {
+        &-re {
+            background-image: url('./assets/img/mac/icon/tool-hov-re.png');
+        }
+        &-ye {
+            background-image: url('./assets/img/mac/icon/tool-hov-ye.png');
+        }
+        &-gr {
+            background-image: url('./assets/img/mac/icon/tool-hov-gr.png');
+        }
+    }
+}
+.folder {
+    background-image: url('./assets/img/mac/icon/folder.png');
+}
+.finder {
+    background-image: url('./assets/img/mac/icon/finder.png');
+}
+.arrow-down {
+    background-image: url('./assets/img/mac/icon/arrow-down.png');
+}
+.arrow-up {
+    background-image: url('./assets/img/mac/icon/arrow-up.png');
 }
