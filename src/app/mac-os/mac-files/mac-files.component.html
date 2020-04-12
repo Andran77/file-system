@@ -38,7 +38,8 @@
       </td>
       <td class="text">{{file.path | pathPipe}}</td>
       <td class="pd-l10 date">{{file.modificationDate | myDate}}</td>
-      <td class="pd-l10 pd-r10 text-rigth size">{{file.size}}</td>
+      <td *ngIf="file.type === 'file'" class="pd-l10 pd-r10 text-rigth size">{{file.size | size}}</td>
+      <td *ngIf="file.type !== 'file'" class="pd-l10 pd-r10 text-rigth size" [innerHTML]="getFolderSize(file.path) | size"></td>
     </tr>
     <tr *ngFor="let i of numToArray()" class="row">
       <td colspan="3"></td>

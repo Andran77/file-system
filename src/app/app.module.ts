@@ -16,6 +16,7 @@ import { WinOsComponent } from './win-os/win-os.component';
 import { MacFilesComponent } from './mac-os/mac-files/mac-files.component';
 import { MyDatePipe } from './my-date.pipe';
 import { PathPipePipe } from './path-pipe.pipe';
+import { SizePipe } from './size.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PathPipePipe } from './path-pipe.pipe';
     WinOsComponent,
     MacFilesComponent,
     MyDatePipe,
-    PathPipePipe
+    PathPipePipe,
+    SizePipe
   ],
   imports: [
     BrowserModule,

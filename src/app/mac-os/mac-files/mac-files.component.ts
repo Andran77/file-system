@@ -1,5 +1,6 @@
 import { Component, Input, SimpleChange, Output, EventEmitter } from '@angular/core';
 import { FileService, File } from '../../file.service'
+import { SortingService } from 'src/app/sorting.service';
 
 @Component({
   selector: 'app-mac-files',
@@ -19,7 +20,10 @@ export class MacFilesComponent {
   sortBySize: Boolean = false;
   sortBySizeK: Boolean = false;
 
-  constructor(public fileService: FileService) { }
+  constructor(
+    public fileService: FileService,
+    public sortService: SortingService
+  ) { }
 
   ngOnChanges(changes: SimpleChange) {
     this.path = changes['path'].currentValue;
@@ -32,46 +36,22 @@ export class MacFilesComponent {
       const regex = new RegExp('^' + regPath + '[a-z\.]*$');
       return regex.test(file.path) && file.path.startsWith(this.path);
     })
-    return this.sortFileByName(files, 1);
-  }
-
-  sortFileByName(files, k) {
-    return files.sort(function (a, b) {
-      if (a.path > b.path) {
-        return 1*k;
-      }
-      if (a.path < b.path) {
-        return -1*k;
-      }
-      return 0;
-    });
-  }
-
-  sortFileByDate(files, k) {
-    return files.sort(function (a, b) {
-      if (a.path > b.path) {
-        return 1*k;
-      }
-      if (a.path < b.path) {
-        return -1*k;
-      }
-      return 0;
-    });
-  }
-
-  sortFileBySize(files, k) {
-    return files.sort(function (a, b) {
-      if (a.path > b.path) {
-        return 1*k;
-      }
-      if (a.path < b.path) {
-        return -1*k;
-      }
-      return 0;
-    });
+    if (this.sortByName) {
+      let kaf = this.sortByNameK ? 1 : -1;
+      return this.sortService.sortFileByName(files, kaf);
+    }
+    if (this.sortByDate) {
+      let kaf = this.sortByDateK ? 1 : -1;
+      return this.sortService.sortFileByDate(files, kaf);
+    }
+    if (this.sortBySize) {
+      let kaf = this.sortBySizeK ? 1 : -1;
+      return this.sortService.sortFileBySize(files, kaf);
+    }
   }
 
   sortBy(field) {
+    let kaf;
     switch(field) {
       case 'name':
         this.sortByDate = false;
@@ -80,8 +60,8 @@ export class MacFilesComponent {
         this.sortBySizeK = false;
         this.sortByName = true;
         this.sortByNameK = !this.sortByNameK;
-        let kaf = this.sortByNameK ? 1 : -1;
-        this.fileItems = this.sortFileByName(this.fileItems, kaf);
+        kaf = this.sortByNameK ? 1 : -1;
+        this.fileItems = this.sortService.sortFileByName(this.fileItems, kaf);
         break;
       case 'date':
         this.sortByName = false;
@@ -90,6 +70,8 @@ export class MacFilesComponent {
         this.sortBySizeK = false;
         this.sortByDate = true;
         this.sortByDateK = !this.sortByDateK;
+        kaf = this.sortByDateK ? 1 : -1;
+        this.fileItems = this.sortService.sortFileByDate(this.fileItems, kaf);
         break;
       case 'size':
         this.sortByName = false;
@@ -98,6 +80,8 @@ export class MacFilesComponent {
         this.sortByDateK = false;
         this.sortBySize = true;
         this.sortBySizeK = !this.sortBySizeK;
+        kaf = this.sortBySizeK ? 1 : -1;
+        this.fileItems = this.sortService.sortFileBySize(this.fileItems, kaf);
         break;
     }
   }
@@ -115,5 +99,9 @@ export class MacFilesComponent {
 
   getFileIcon(path) {
     return 'file ' + 'file-' + path.replace(/.*\./, '');
+  }
+
+  getFolderSize(path) {
+    return this.fileService.getFolderSize(path);
   }
 }
