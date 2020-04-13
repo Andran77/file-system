@@ -12,6 +12,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+
 import { HomeComponent } from './home/home.component';
 import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { MacOsComponent } from './mac-os/mac-os.component';
@@ -20,6 +22,7 @@ import { MacFilesComponent } from './mac-os/mac-files/mac-files.component';
 import { MyDatePipe } from './my-date.pipe';
 import { PathPipePipe } from './path-pipe.pipe';
 import { SizePipe } from './size.pipe';
+import { ResizableModule } from 'angular-resizable-element';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,9 @@ import { SizePipe } from './size.pipe';
     MatIconModule,
     MatListModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    ResizableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
