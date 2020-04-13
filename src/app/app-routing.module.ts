@@ -10,7 +10,8 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'mac', component: MacOsComponent },
   { path: 'mac/:id', component: MacOsComponent },
-  { path: 'win', component: WinOsComponent }
+  { path: 'win', component: WinOsComponent },
+  { path: 'win/:id', component: WinOsComponent }
 ];
 
 @NgModule({

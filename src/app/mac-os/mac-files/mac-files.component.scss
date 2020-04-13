@@ -32,14 +32,13 @@ table {
     }
     .row {
       height: 30px;
-      .triangle {
-        width: 10px;
-        .arrow-right {
-          width: 0;
-          height: 0;
-          border-top: 6px solid transparent;
-          border-bottom: 6px solid transparent;
-          border-left: 9px solid #7a7a7a;
+      td.first {
+        width: 25px;
+        .triangle {
+          width: 72px;
+          height: 72px;
+          zoom: 0.34;
+
         }
       }
       .icon {
