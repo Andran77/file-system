@@ -1,0 +1,93 @@
+.container {
+    table {
+        font-family: arial, sans-serif;
+        width: 100%;
+        .header {
+          color: #2a2a2a;
+          height: 30px;
+          .name {
+            padding-left: 5px;
+            border-right: 1px solid #dfdfdf;
+          }
+          .inner-name {
+            float: right;
+            padding-right: 10px;
+            .arrow-down {
+              width: 36px;
+              height: 36px;
+              zoom: 0.3;
+            }
+            .arrow-up {
+              width: 36px;
+              height: 36px;
+              zoom: 0.3;
+            }
+          }
+          .date {
+            border-right: 1px solid #dfdfdf;
+          }
+        }
+        .row {
+          height: 30px;
+          td.first {
+            width: 25px;
+            .triangle {
+              width: 72px;
+              height: 72px;
+              zoom: 0.34;
+    
+            }
+          }
+          .icon {
+            padding-top: 5px;
+            width: 25px;
+            .folder {
+              height: 92px;
+              width: 120px;
+              zoom: 0.2;
+            }
+            .file {
+              background-image: url('../../../assets/img/mac/icon/icon-all.png');
+              height: 120px;
+              width: 93px;
+              zoom: 0.2;
+              &-pdf {
+                background-image: url('../../../assets/img/mac/icon/icon-pdf.png');
+                height: 120px;
+                width: 96px;
+                zoom: 0.2;
+              }
+              &-txt {
+                background-image: url('../../../assets/img/mac/icon/icon-txt.png');
+                height: 120px;
+                width: 93px;
+                zoom: 0.2;
+              }
+              &-csv {
+                background-image: url('../../../assets/img/mac/icon/icon-csv.png');
+                height: 98px;
+                width: 95px;
+                zoom: 0.2;
+              }
+              &-doc {
+                background-image: url('../../../assets/img/mac/icon/icon-doc.png');
+                height: 120px;
+                width: 96px;
+                zoom: 0.2;
+              }
+            }
+          }
+          .text {
+            color: #494949;
+          }
+          .date {
+            color: #8f8f8f;
+          }
+          .size {
+            color: #919191;
+          }
+        }
+    }
+    
+}
+  

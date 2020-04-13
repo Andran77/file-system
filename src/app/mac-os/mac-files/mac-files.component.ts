@@ -116,7 +116,7 @@ export class MacFilesComponent {
   }
 
   numToArray(): any[] {
-    const num = 20 - this.fileItems.length;
+    const num = 30 - this.fileItems.length;
     return Array(num);
   }
 
