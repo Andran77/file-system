@@ -14,7 +14,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.openDialog();
+    setTimeout(() => {
+      this.openDialog();
+    }, 500);
   }
 
   openDialog() {

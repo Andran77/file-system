@@ -29,10 +29,10 @@
       </th>
     </tr>
     <tr *ngFor="let file of fileItems" class="row" (dblclick)="selectFolder(file)">
-      <td class="pd-l10 triangle">
-        <div *ngIf="file.type !== 'file'" class="arrow-right"></div>
+      <td class="first">
+        <mat-icon *ngIf="file.type !== 'file'" class="triangle"></mat-icon>
       </td>
-      <td class="pd-l10 icon">
+      <td class="icon">
         <span *ngIf="file.type !== 'file'"><mat-icon class="folder"></mat-icon></span>
         <span *ngIf="file.type === 'file'"><mat-icon [ngClass]="getFileIcon(file.path)"></mat-icon></span>
       </td>

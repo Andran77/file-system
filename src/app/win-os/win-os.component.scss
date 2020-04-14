@@ -1,5 +1,147 @@
-div {
-    background-color: #ffffff;
-    width: 100%;
-    height: 100%;
+.container {
+    width: calc(99% - 12px);
+    height: calc(99% - 54px);
+    border: 1px solid #cf9922;
+    background: #f0c869;
+    padding: 40px 10px 10px 10px;
+    .title {
+        position: absolute;
+        top: calc(0.5% + 2px);
+        height: 40px;
+        &-left {
+            width: 30px;
+            line-height: 60px;
+            .win-folder {
+                width: 200px;
+                height: 200px;
+                zoom: 0.13;
+            }
+        }
+        &-center {
+            left: 25%;
+            width: 50%;
+            display: flex;
+            line-height: 40px;
+            justify-content: center;
+            color: #282828;
+        }
+        &-right {
+            right: 15px;
+            width: 118px;
+            .win-window {
+                width: 640px;
+                height: 240px;
+                zoom: 0.1;
+            }
+            .win-close {
+                width: 540px;
+                height: 240px;
+                zoom: 0.1;
+            }
+        }
+    }
+    .main {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #d6b35e;
+        background: #ffffff;
+        .header {
+            line-height: 30px;
+            height: 30px;
+            border-bottom: 1px solid #dadbdc;
+            .file {
+                background: #1979ca;
+                color: #ffffff;
+            }
+            .win {
+                &-header {
+                    width: 390px;
+                    height: 95px;
+                    zoom: 0.3;
+                }
+                &-header-first {
+                    width: 368px;
+                    height: 180px;
+                    zoom: 0.17;
+                    float: right;
+                }
+            }
+        }
+        .buttom {
+            line-height: 30px;
+            height: 30px;
+            .left {
+                padding: 3px 5px 3px 5px;
+                float: left;
+                height: 24px;
+                line-height: 24px;
+                .win {
+                    &-arrow-left, &-arrow-right, &-triangle-down, &-arrow-up-active {
+                        width: 240px;
+                        height: 240px;
+                        zoom: 0.1;
+                    }
+                }
+            }
+            .center {
+                width: calc(70% - 158px);
+                height: 28px;
+                padding: 1px 15px 1px 0;
+                .input {
+                    border: 1px solid #e0e0e0;
+                    height: 26px;
+                    line-height: 26px;
+                    .pathname {
+                        color: #282828;
+                    }
+                    .win-folder {
+                        width: 200px;
+                        height: 200px;
+                        zoom: 0.13;
+                    }
+                    .win-triangle-right {
+                        width: 120px;
+                        height: 240px;
+                        zoom: 0.11;
+                    }
+                }
+            }
+            .right {
+                width: calc(45% - 140px);
+                height: 28px;
+                padding: 1px 0 1px 0;
+                .srch {
+                    border: 1px solid #e0e0e0;
+                    height: 26px;
+                    line-height: 26px;
+                    .searchbox {
+                        color: #6d6e87;
+                        font-size: 13px;
+                        height: 24px;
+                        outline: none;
+                        border: none;
+                        padding-left: 5px;
+                        width: calc(100% - 30px);
+                        
+                    }
+                    .searchbox::placeholder {
+                        color: #6d6d6d;
+                    }
+                    .win-srch {
+                        height: 140px;
+                        width: 120px;
+                        zoom: 0.19;
+                    }
+                    .win-clear-search {
+                        height: 140px;
+                        width: 120px;
+                        zoom: 0.19;
+                    }
+                }
+            }
+        }
+        .inner {
+            height: calc(100% - 102px);
+        }
+    }
 }

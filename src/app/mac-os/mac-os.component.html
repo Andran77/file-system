@@ -1,7 +1,7 @@
 <div class="toolbar">
    <div class="pd-l5 header-content">
       <mat-icon class="tool-ic tool-re" (click)="goHome()"></mat-icon>
-      <mat-icon class="tool-ic tool-ye" (click)="goBack()"></mat-icon>
+      <mat-icon class="tool-ic tool-ye"></mat-icon>
       <mat-icon class="tool-ic tool-gr"></mat-icon>
    </div>
    <div *ngIf="currentPath && !searchText" class="tool-content">
@@ -27,7 +27,7 @@
                   class="input-field pd-l25"
                   placeholder="Search"
                   [(ngModel)]="searchText">
-               <mat-icon class="cancel" (click)="clearSearch()"></mat-icon>
+               <mat-icon *ngIf="searchText" class="cancel pd-r20" (click)="clearSearch()"></mat-icon>
             </div>
          </div>
       </div>
