@@ -1,6 +1,56 @@
 <div class="container">
-    <div class="header pd-5">trst</div>
-    <div class="inner">
-        <app-win-files></app-win-files>
+    <div class="title title-left">
+        <mat-icon class="win-folder"></mat-icon>
+    </div>
+    <div class="title title-center">
+        Рабочий стол
+    </div>
+    <div class="title title-right">
+        <mat-icon class="win-window"></mat-icon>
+        <mat-icon class="win-close" (click)="goHome()"></mat-icon>
+    </div>
+    <div class="main">
+        <div class="header pd-r5">
+            <div class="file float-left pd-l20 pd-r20">Файл</div>
+            <div class="float-left  pd-l20 pd-r20">Главная</div>
+            <div class="float-left pd-l20 pd-r20">Поделиться</div>
+            <div class="float-left pd-l20 pd-r20">Вид</div>
+            <mat-icon class="win-header-first"></mat-icon>
+        </div>
+        <div class="header">
+            <mat-icon class="win-header"></mat-icon>
+        </div>
+        <div class="buttom pd-5">
+            <div class="left">
+                <mat-icon class="win-arrow-left"></mat-icon>
+            </div>
+            <div class="left">
+                <mat-icon class="win-arrow-right"></mat-icon>
+            </div>
+            <div class="left">
+                <mat-icon class="win-triangle-down"></mat-icon>
+            </div>
+            <div class="left">
+                <mat-icon class="win-arrow-up-active"></mat-icon>
+            </div>
+            <div class="center float-left">
+                <div class="input pd-l5">
+                    <mat-icon class="win-folder float-left"></mat-icon>
+                    <div class="pathname float-left pd-l5 pd-r5">Рабочий стол</div>
+                    <mat-icon class="win-triangle-right float-left"></mat-icon>
+
+                </div>
+            </div>
+            <div class="right float-left">
+                <div class="srch">
+                    <input type="text" class="searchbox" placeholder="Поиск: Рабочий стол">
+                    <mat-icon *ngIf="true" class="win-srch float-right"></mat-icon>
+                    <mat-icon *ngIf="false" class="win-clear-search float-right"></mat-icon>
+                </div>
+            </div>
+        </div>
+        <div class="inner">
+            <app-win-files></app-win-files>
+        </div>
     </div>
 </div>
