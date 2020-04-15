@@ -7,14 +7,18 @@ export interface File {
   size?: number;
 }
 
+const today = new Date().toLocaleString();
+const yesterday = new Date(new Date().getTime() - 86400000).toLocaleString();
+
 @Injectable({
   providedIn: 'root'
 })
 export class FileService {
+
   files: Array<File> =  [
     {
       path: 'university',
-      modificationDate: '2019-01-01',
+      modificationDate: today,
       type: 'folder'
     },
     {
@@ -75,7 +79,7 @@ export class FileService {
     },
     {
       path: 'university/rules.pdf',
-      modificationDate: '2019-01-01',
+      modificationDate: yesterday,
       type: 'file',
       size: 0.02
     }

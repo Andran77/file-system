@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'myDate'
+  name: 'mcDate'
 })
-export class MyDatePipe implements PipeTransform {
+export class McDatePipe implements PipeTransform {
 
   transform(value: string): string {
     let vTime = value.length > 10 ? new Date(value).toLocaleTimeString().replace(/:\d\d\s/, ' ') : '12:00 AM';
@@ -34,4 +34,5 @@ export class MyDatePipe implements PipeTransform {
       return diffYesterday >= 0 && diffYesterday <= 86400000
     }
   }
+
 }

@@ -37,7 +37,7 @@
         <span *ngIf="file.type === 'file'"><mat-icon [ngClass]="getFileIcon(file.path)"></mat-icon></span>
       </td>
       <td class="text">{{file.path | pathPipe}}</td>
-      <td class="pd-l10 date">{{file.modificationDate | myDate}}</td>
+      <td class="pd-l10 date">{{file.modificationDate | mcDate}}</td>
       <td *ngIf="file.type === 'file'" class="pd-l10 pd-r10 text-rigth size">{{file.size | size}}</td>
       <td *ngIf="file.type !== 'file'" class="pd-l10 pd-r10 text-rigth size" [innerHTML]="getFolderSize(file.path) | size"></td>
     </tr>
