@@ -6,11 +6,10 @@
     padding: 40px 10px 10px 10px;
     .title {
         position: absolute;
-        top: calc(0.5% + 2px);
+        top: 0;
         height: 40px;
         &-left {
-            width: 30px;
-            line-height: 60px;
+            padding-top: 8px;
             .win-folder {
                 width: 200px;
                 height: 200px;
@@ -84,7 +83,7 @@
                 }
             }
             .center {
-                width: calc(60% - 158px);
+                width: calc(60% - 100px);
                 height: 28px;
                 padding: 1px 15px 1px 0;
                 .input {
