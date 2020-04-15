@@ -41,6 +41,10 @@
                     <mat-icon *ngIf="currentPath" class="win-fldr float-left"></mat-icon>
                     <div class="pathname float-left pd-l5 pd-r5">Рабочий стол</div>
                     <mat-icon class="win-triangle-right float-left"></mat-icon>
+                    <ng-container *ngFor="let path of currentPaths">
+                        <div class="pathname float-left">{{ path }}</div>
+                        <mat-icon class="win-triangle-right float-left"></mat-icon>
+                    </ng-container>
 
                 </div>
             </div>

@@ -12,6 +12,7 @@ export class WinOsComponent implements OnInit {
 
   fullPath: string = '';
   currentPath: string = '';
+  currentPaths: Array<string> = [];
   historyPath: Array<string> = [];
   searchText: string = '';
 
@@ -43,10 +44,14 @@ export class WinOsComponent implements OnInit {
     this.searchText = '';
     this.historyPath = [];
     this.currentPath = this.getCurrentPath(event);
+    this.currentPaths.push(this.currentPath);
     this.fullPath = event + '/';
   }
 
   goBack() {
+    if (!this.currentPath) return;
+
+    this.currentPaths.pop()
     this.searchText = '';
     this.historyPath.push(this.currentPath);
     this.fullPath = this.fullPath.replace(/([a-z]*\/)$/, '');
@@ -55,9 +60,9 @@ export class WinOsComponent implements OnInit {
   }
 
   goPrew() {
-    this.searchText = '';
     if (!this.historyPath.length) return;
 
+    this.searchText = '';
     const path = this.historyPath.pop();
     this.fullPath += path + '/';
     this.currentPath = path;

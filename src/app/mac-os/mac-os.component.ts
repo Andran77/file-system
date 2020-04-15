@@ -13,6 +13,7 @@ export class MacOsComponent implements OnInit {
   showCloud:Boolean = true;
   showFav:Boolean = true;
   fullPath: string = '';
+  currentPaths: Array<string> = [];
   currentPath: string = '';
   historyPath: Array<string> = [];
   searchText: string = '';
@@ -45,6 +46,7 @@ export class MacOsComponent implements OnInit {
     this.searchText = '';
     this.historyPath = [];
     this.currentPath = this.getCurrentPath(event);
+    this.currentPaths.push(this.currentPath);
     this.fullPath = event + '/';
   }
 
@@ -52,6 +54,7 @@ export class MacOsComponent implements OnInit {
     if (!this.currentPath) return;
 
     this.searchText = '';
+    this.currentPaths.pop()
     this.historyPath.push(this.currentPath);
     this.fullPath = this.fullPath.replace(/([a-z]*\/)$/, '');
     // this.router.navigate([`mac/${this.fullPath}`]);
