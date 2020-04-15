@@ -1,17 +1,18 @@
 .container {
-    width: calc(99% - 12px);
-    height: calc(99% - 54px);
-    border: 1px solid #cf9922;
+    width: calc(100% - 22px);
+    height: 101px;
+    border-right: 1px solid #cf9922;
+    border-left: 1px solid #cf9922;
+    border-top: 1px solid #cf9922;
     background: #f0c869;
-    padding: 40px 10px 10px 10px;
+    padding: 40px 10px 0 10px;
     .title {
         position: absolute;
-        top: calc(0.5% + 2px);
+        top: 0;
         height: 40px;
         &-left {
-            width: 30px;
-            line-height: 60px;
-            .win-folder {
+            padding-top: 8px;
+            .win-desctop, .win-fldr {
                 width: 200px;
                 height: 200px;
                 zoom: 0.13;
@@ -42,8 +43,10 @@
     }
     .main {
         width: 100%;
-        height: 100%;
-        border: 1px solid #d6b35e;
+        height: 100px;
+        border-right: 1px solid #d6b35e;
+        border-left: 1px solid #d6b35e;
+        border-top: 1px solid #d6b35e;
         background: #ffffff;
         .header {
             line-height: 30px;
@@ -76,15 +79,19 @@
                 height: 24px;
                 line-height: 24px;
                 .win {
-                    &-arrow-left, &-arrow-right, &-triangle-down, &-arrow-up-active {
+                    &-arrow-left, &-arrow-right, &-triangle-down, &-arrow-up, &-arrow-up-active {
                         width: 240px;
                         height: 240px;
                         zoom: 0.1;
                     }
+                    &-arrow-up-active:hover {
+                        border: 1px solid #7fb5ec;
+                        background-color: #deefff;
+                    }
                 }
             }
             .center {
-                width: calc(70% - 158px);
+                width: calc(60% - 100px);
                 height: 28px;
                 padding: 1px 15px 1px 0;
                 .input {
@@ -93,8 +100,10 @@
                     line-height: 26px;
                     .pathname {
                         color: #282828;
+                        font-size: 10px;
+                        padding: 0 2px;
                     }
-                    .win-folder {
+                    .win-desctop, .win-fldr {
                         width: 200px;
                         height: 200px;
                         zoom: 0.13;
@@ -127,21 +136,23 @@
                     .searchbox::placeholder {
                         color: #6d6d6d;
                     }
-                    .win-srch {
+                    .win-srch, .win-clear-search {
                         height: 140px;
                         width: 120px;
-                        zoom: 0.19;
-                    }
-                    .win-clear-search {
-                        height: 140px;
-                        width: 120px;
-                        zoom: 0.19;
+                        zoom: 0.18;
                     }
                 }
             }
         }
-        .inner {
-            height: calc(100% - 102px);
-        }
     }
+}
+.inner {
+    height: calc(100% - 153px);
+    width: calc(100% - 22px);
+    background: #f0c869;
+    position: absolute;
+    border-right: 1px solid #cf9922;
+    border-left: 1px solid #cf9922;
+    border-bottom: 1px solid #cf9922;
+    padding: 0 10px 10px 10px;
 }

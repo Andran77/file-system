@@ -4,7 +4,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; user-select: none;}
 .mat-typography {
     background-color: #f3f3f3;
-    padding: 0.5%;
+    // padding: 0.5%;
 }
 .float-left {
     float: left;
@@ -195,39 +195,60 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; user-select
 }
 .win {
     &-header {
-        background-image: url('./assets/img/win/icon/header.png');
+        background-image: url('./assets/img/win/icon/win-header.png');
     }
     &-header-first {
-        background-image: url('./assets/img/win/icon/header-first.png');
+        background-image: url('./assets/img/win/icon/win-header-first.png');
     }
-    &-folder {
-        background-image: url('./assets/img/win/icon/display.png');
+    &-desctop {
+        background-image: url('./assets/img/win/icon/win-display.png');
+    }
+    &-fldr {
+        background-image: url('./assets/img/win/icon/win-folder.png');
     }
     &-close {
-        background-image: url('./assets/img/win/icon/close.png');
+        background-image: url('./assets/img/win/icon/win-close.png');
     }
     &-window {
-        background-image: url('./assets/img/win/icon/window.png');
+        background-image: url('./assets/img/win/icon/win-window.png');
     }
     &-arrow-left {
-        background-image: url('./assets/img/win/icon/arrow-left.png');
+        background-image: url('./assets/img/win/icon/win-arrow-left.png');
+    }
+    &-arrow-left-active {
+        background-image: url('./assets/img/win/icon/win-arrow-left-active.png');
+    }
+    &-arrow-left-active:hover {
+        background-image: url('./assets/img/win/icon/win-arrow-left-hov.png');
     }
     &-arrow-right {
-        background-image: url('./assets/img/win/icon/arrow-right.png');
+        background-image: url('./assets/img/win/icon/win-arrow-right.png');
+    }
+    &-arrow-right-active {
+        background-image: url('./assets/img/win/icon/win-arrow-right-active.png');
+    }
+    &-arrow-right-active:hover {
+        background-image: url('./assets/img/win/icon/win-arrow-right-hov.png');
     }
     &-triangle-down {
-        background-image: url('./assets/img/win/icon/triangle-down.png');
+        background-image: url('./assets/img/win/icon/win-triangle-down.png');
     }
     &-triangle-right {
-        background-image: url('./assets/img/win/icon/triangle-right.png');
+        background-image: url('./assets/img/win/icon/win-triangle-right.png');
+    }
+    &-arrow-up {
+        background-image: url('./assets/img/win/icon/win-arrow-up.png');
     }
     &-arrow-up-active {
-        background-image: url('./assets/img/win/icon/arrow-up-active.png');
+        background-image: url('./assets/img/win/icon/win-arrow-up-active.png');
     }
     &-srch {
         background-image: url('./assets/img/win/icon/win-loop.png');
     }
     &-clear-search {
-        background-image: url('./assets/img/win/icon/clear-search.png');
+        background-image: url('./assets/img/win/icon/win-clear-search.png');
+    }
+    &-pdf {
+        background-image: url('./assets/img/win/icon/win-pdf.png');
     }
 }

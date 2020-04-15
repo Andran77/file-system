@@ -6,7 +6,30 @@ import { FileService } from './file.service';
 })
 export class SortingService {
 
+  static fileType = {
+    folder: 'File folder',
+    file: {
+      txt: 'Text Document',
+      pdf: 'PDF Document',
+      csv: 'CSV Document',
+      doc: 'Word Document',
+    }
+  };
+
   static fileService = new FileService();
+
+  sortFile(field, files, k) {
+    switch(field) {
+      case 'name':
+        return this.sortFileByName(files, k);
+      case 'date':
+        return this.sortFileByDate(files, k);
+      case 'size':
+        return this.sortFileBySize(files, k);
+      case 'type':
+        return this.sortFileByType(files, k);
+    }
+  }
 
   sortFileByName(files, k) {
     return files.sort(function (a, b) {
@@ -48,5 +71,24 @@ export class SortingService {
       }
       return 0;
     });
+  }
+
+  sortFileByType(files, k) {
+    return files.sort(function (a, b) {
+      const aType = a.type === 'folder' ? 'File folder' : SortingService.getFileType(a.path);
+      const bType = b.type === 'folder' ? 'File folder' : SortingService.getFileType(b.path);
+      if (aType > bType) {
+        return 1*k;
+      }
+      if (aType < bType) {
+        return -1*k;
+      }
+      return 0;
+    });
+  }
+
+  static getFileType(path) {
+    const key = path.replace(/.*\./, '');
+    return this.fileType.file[key];
   }
 }

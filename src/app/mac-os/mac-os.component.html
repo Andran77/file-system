@@ -5,7 +5,9 @@
       <mat-icon class="tool-ic tool-gr"></mat-icon>
    </div>
    <div *ngIf="currentPath && !searchText" class="tool-content">
-      <mat-icon class="folder"></mat-icon><p class="pd-l5 text">{{currentPath}}</p>
+      <mat-icon class="folder"></mat-icon>
+      <!-- <p class="pd-l5 text">{{currentPath}}</p> -->
+      <span *ngFor="let path of currentPaths"><p class="pd-l5 text">{{path}}/ </p></span>
    </div>
    <div *ngIf="!currentPath || searchText" class="tool-content">
       <mat-icon class="finder"></mat-icon><p class="pd-l5 text">Finder</p>
@@ -19,7 +21,7 @@
          <div class="tool float-left">
             <mat-icon class="tool-btn"></mat-icon>
          </div>
-         <div class="search float-left">
+         <div class="search">
             <div class="input">
                <mat-icon class="search-loop" matSufux></mat-icon>
                <input
