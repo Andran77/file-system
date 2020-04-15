@@ -22,6 +22,7 @@ import { MyDatePipe } from './my-date.pipe';
 import { PathPipePipe } from './path-pipe.pipe';
 import { SizePipe } from './size.pipe';
 import { WinFilesComponent } from './win-os/win-files/win-files.component';
+import { WinDatePipe } from './win-date.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { WinFilesComponent } from './win-os/win-files/win-files.component';
     MyDatePipe,
     PathPipePipe,
     SizePipe,
-    WinFilesComponent
+    WinFilesComponent,
+    WinDatePipe
   ],
   imports: [
     BrowserModule,

@@ -49,6 +49,9 @@ export class MacOsComponent implements OnInit {
   }
 
   goBack() {
+    if (!this.currentPath) return;
+
+    this.searchText = '';
     this.historyPath.push(this.currentPath);
     this.fullPath = this.fullPath.replace(/([a-z]*\/)$/, '');
     // this.router.navigate([`mac/${this.fullPath}`]);
@@ -58,6 +61,7 @@ export class MacOsComponent implements OnInit {
   goPrew() {
     if (!this.historyPath.length) return;
 
+    this.searchText = '';
     const path = this.historyPath.pop();
     this.fullPath += path + '/';
     this.currentPath = path;

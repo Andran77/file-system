@@ -1,75 +1,91 @@
 .container {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: inherit;
+  right: auto;
+  bottom: auto;
+  z-index: 1000;
+  border-right: 1px solid #d6b35e;
+  border-left: 1px solid #d6b35e;
+  border-bottom: 1px solid #d6b35e;
+  .content {
+    background-color: white;
+    overflow-y: scroll;
+    height: 100%; 
     table {
-        font-family: arial, sans-serif;
-        width: 100%;
-        .header {
-          color: #2a2a2a;
-          height: 30px;
-          .name {
-            padding-left: 5px;
-            border-right: 1px solid #dfdfdf;
-          }
-          .inner-name {
-            float: right;
-            padding-right: 10px;
-            .arrow-down {
-              width: 36px;
-              height: 36px;
-              zoom: 0.3;
-            }
-            .arrow-up {
-              width: 36px;
-              height: 36px;
-              zoom: 0.3;
-            }
-          }
-          .date {
-            border-right: 1px solid #dfdfdf;
+      font-family: arial, sans-serif;
+      width: 100%;
+      .header {
+        color: #7487a7;
+        height: 30px;
+        th {
+          position:sticky;
+          top: 0;
+          z-index: 73;
+          background-color: #ffffff;
+        }
+        th:hover {
+          background-color: #f3f8fd;
+          border-left: 1px solid #e6ebf1;
+          border-right: 2px solid #e6ebf1;
+          border-bottom: 1px solid #e6ebf1;
+        }
+        .name {
+          padding-left: 5px;
+        }
+        .inner-name {
+          top: -5px;
+          position: absolute;
+          left: 50%;
+          .arrow-down, .arrow-up {
+            width: 36px;
+            height: 36px;
+            zoom: 0.3;
           }
         }
-        .row {
-          height: 30px;
-          td.first {
-            width: 25px;
-            .triangle {
-              width: 72px;
-              height: 72px;
-              zoom: 0.34;
-    
-            }
-          }
-          .icon {
-            padding-top: 5px;
-            width: 25px;
-            .folder {
-              height: 92px;
-              width: 120px;
-              zoom: 0.2;
+        .date, .name, .type {
+          border-right: 1px solid #dfdfdf;
+        }
+        .name, .date, .type, .size {
+          font-weight: normal;
+        }
+      }
+      .row {
+        height: 30px;
+        .icon {
+          width: 24px;
+          padding-left: 5px;
+          div {
+            .win-fldr {
+              width: 200px;
+              height: 200px;
+              zoom: 0.13;
             }
             .file {
               background-image: url('../../../assets/img/mac/icon/icon-all.png');
               height: 120px;
               width: 93px;
               zoom: 0.2;
-              &-pdf {
-                background-image: url('../../../assets/img/mac/icon/icon-pdf.png');
+              &-win-pdf {
+                background-image: url('../../../assets/img/win/icon/win-pdf.png');
                 height: 120px;
-                width: 96px;
+                width: 120px;
                 zoom: 0.2;
               }
-              &-txt {
+              &-win-txt {
                 background-image: url('../../../assets/img/mac/icon/icon-txt.png');
                 height: 120px;
                 width: 93px;
                 zoom: 0.2;
               }
-              &-csv {
+              &-win-csv {
                 background-image: url('../../../assets/img/mac/icon/icon-csv.png');
                 height: 98px;
                 width: 95px;
                 zoom: 0.2;
               }
-              &-doc {
+              &-win-doc {
                 background-image: url('../../../assets/img/mac/icon/icon-doc.png');
                 height: 120px;
                 width: 96px;
@@ -77,17 +93,46 @@
               }
             }
           }
-          .text {
-            color: #494949;
-          }
-          .date {
-            color: #8f8f8f;
-          }
-          .size {
-            color: #919191;
-          }
         }
+        .filename {
+          color: #494949;
+        }
+        .date {
+          color: #8f8f8f;
+        }
+        .size {
+          color: #919191;
+          padding-right: 5px;
+        }
+      }
     }
-    
+  }
 }
-  
+
+table {
+  border-collapse: collapse; 
+  td {
+    padding: 0;
+  }
+  td div {
+    height: 24px;
+    padding-left: 5px;
+    line-height: 24px;
+  }
+  td:first-child div {
+    border-left-width: 1px;
+  }
+  td:last-child div {
+    border-right-width: 1px;
+    padding-right: 5px;
+  }
+}
+
+.add-border {
+  border-style: solid;
+  border-color: #66a7e8;
+  border-width: 1px 0;
+}
+.add-background {
+  background-color: #d1e8ff;
+}

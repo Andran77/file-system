@@ -1,9 +1,11 @@
 <div class="container">
     <div class="title title-left">
-        <mat-icon class="win-folder"></mat-icon>
+        <mat-icon *ngIf="!currentPath" class="win-desctop"></mat-icon>
+        <mat-icon *ngIf="currentPath" class="win-fldr"></mat-icon>
     </div>
     <div class="title title-center">
-        Рабочий стол
+        <span *ngIf="currentPath">{{ currentPath }}</span>
+        <span *ngIf="!currentPath">Рабочий стол</span>
     </div>
     <div class="title title-right">
         <mat-icon class="win-window"></mat-icon>
@@ -22,20 +24,21 @@
         </div>
         <div class="buttom pd-5">
             <div class="left">
-                <mat-icon class="win-arrow-left"></mat-icon>
+                <mat-icon class="win-arrow-left" [ngClass]="currentPath ? 'win-arrow-left-active' : ''" (click)="goBack()"></mat-icon>
             </div>
             <div class="left">
-                <mat-icon class="win-arrow-right"></mat-icon>
+                <mat-icon class="win-arrow-right"  [ngClass]="historyPath.length ? 'win-arrow-right-active' : ''" (click)="goPrew()"></mat-icon>
             </div>
             <div class="left">
                 <mat-icon class="win-triangle-down"></mat-icon>
             </div>
             <div class="left">
-                <mat-icon class="win-arrow-up-active"></mat-icon>
+                <mat-icon [ngClass]="currentPath ? 'win-arrow-up-active' : 'win-arrow-up'" (click)="goBack()"></mat-icon>
             </div>
             <div class="center float-left">
                 <div class="input pd-l5">
-                    <mat-icon class="win-folder float-left"></mat-icon>
+                    <mat-icon *ngIf="!currentPath" class="win-desctop float-left"></mat-icon>
+                    <mat-icon *ngIf="currentPath" class="win-fldr float-left"></mat-icon>
                     <div class="pathname float-left pd-l5 pd-r5">Рабочий стол</div>
                     <mat-icon class="win-triangle-right float-left"></mat-icon>
 
@@ -43,14 +46,18 @@
             </div>
             <div class="right float-right">
                 <div class="srch">
-                    <input type="text" class="searchbox" placeholder="Поиск: Рабочий стол">
-                    <mat-icon *ngIf="true" class="win-srch float-right"></mat-icon>
-                    <mat-icon *ngIf="false" class="win-clear-search float-right"></mat-icon>
+                    <input
+                        type="text"
+                        class="searchbox"
+                        [placeholder]="currentPath ? 'Поиск: ' + currentPath : 'Поиск: Рабочий стол'"
+                        [(ngModel)]="searchText">
+                    <mat-icon *ngIf="!searchText" class="win-srch float-right"></mat-icon>
+                    <mat-icon *ngIf="searchText" class="win-clear-search float-right" (click)="clearSearch()"></mat-icon>
                 </div>
             </div>
         </div>
-        <div class="inner">
-            <app-win-files></app-win-files>
-        </div>
     </div>
+</div>
+<div class="inner">
+    <app-win-files  [path]="fullPath" [searchText]="searchText" (selectedFolder)="selectedFolder($event)"></app-win-files>
 </div>
