@@ -33,6 +33,13 @@ export class WinOsComponent implements OnInit {
     }
   }
 
+  ngDoCheck() {
+    const path = this.router.url.slice(4);
+    if (this.fileService.getFilesStartsWith(path) && path.replace(/\//g, '') !== this.fullPath.replace(/\//g, '')) {
+      window.location.reload();
+    }
+  }
+
   selectedFolder(event) {
     this.fullPath = event + '/';
     this.historyPath = [];

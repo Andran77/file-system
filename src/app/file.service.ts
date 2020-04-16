@@ -90,7 +90,7 @@ export class FileService {
   }
 
   getFilesStartsWith(path) {
-    return this.files.find(file => file.path === path)
+    return path ? this.files.find(file => file.path === path) : true;
   }
 
   getFolderSize(path) {
