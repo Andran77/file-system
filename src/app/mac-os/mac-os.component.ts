@@ -38,7 +38,7 @@ export class MacOsComponent implements OnInit {
   }
 
   ngDoCheck() {
-    const path = this.router.url.slice(4);
+    const path = this.router.url.slice(5);
     if (this.fileService.getFilesStartsWith(path) && path.replace(/\//g, '') !== this.fullPath.replace(/\//g, '')) {
       window.location.reload();
     }
