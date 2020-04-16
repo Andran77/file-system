@@ -8,10 +8,13 @@ import { WinOsComponent } from './win-os/win-os.component';
 const appRoutes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'mac', component: MacOsComponent },
-  { path: 'mac/:id', component: MacOsComponent },
-  { path: 'win', component: WinOsComponent },
-  { path: 'win/:id', component: WinOsComponent }
+  { path: 'mac', component: MacOsComponent, children: [
+    { path: '**', component: WinOsComponent }
+  ]},
+  { path: 'win', component: WinOsComponent, children: [
+    { path: '**', component: WinOsComponent }
+  ]},
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({

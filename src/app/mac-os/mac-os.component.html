@@ -6,8 +6,7 @@
    </div>
    <div *ngIf="currentPath && !searchText" class="tool-content">
       <mat-icon class="folder"></mat-icon>
-      <!-- <p class="pd-l5 text">{{currentPath}}</p> -->
-      <span *ngFor="let path of currentPaths"><p class="pd-l5 text">{{path}}/ </p></span>
+      <p class="pd-l5 text">{{currentPath}}</p>
    </div>
    <div *ngIf="!currentPath || searchText" class="tool-content">
       <mat-icon class="finder"></mat-icon><p class="pd-l5 text">Finder</p>
