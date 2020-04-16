@@ -18,11 +18,10 @@ import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { MacOsComponent } from './mac-os/mac-os.component';
 import { WinOsComponent } from './win-os/win-os.component';
 import { MacFilesComponent } from './mac-os/mac-files/mac-files.component';
-import { MyDatePipe } from './my-date.pipe';
 import { PathPipePipe } from './path-pipe.pipe';
 import { SizePipe } from './size.pipe';
 import { WinFilesComponent } from './win-os/win-files/win-files.component';
-import { WinDatePipe } from './win-date.pipe';
+import { McDatePipe } from './mc-date.pipe';
 
 @NgModule({
   declarations: [
@@ -32,11 +31,10 @@ import { WinDatePipe } from './win-date.pipe';
     MacOsComponent,
     WinOsComponent,
     MacFilesComponent,
-    MyDatePipe,
     PathPipePipe,
     SizePipe,
     WinFilesComponent,
-    WinDatePipe
+    McDatePipe
   ],
   imports: [
     BrowserModule,

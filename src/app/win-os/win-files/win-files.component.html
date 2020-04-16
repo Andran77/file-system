@@ -52,7 +52,7 @@
                     </div>
                 </td>
                 <td class="pd-l10 date">
-                    <div>{{ file.modificationDate | winDate }}</div>
+                    <div>{{ file.modificationDate | date: 'M/d/yyyy h:mm a' }}</div>
                 </td>
                 <td class="pd-l10 date">
                     <div [innerHTML]="getFileType(file)"></div>
